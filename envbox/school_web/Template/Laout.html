@@ -13,32 +13,71 @@
     <title>PCRN SCHOOL</title>
     <style>
       .centet_footer{
-        position: absolute;
-        bottom: 8px;
+        position: fixed;
+        left: 0;
+        bottom: 0;
         width: 100%;
-        
+        text-align: center;
         font-size: 18px;
       }
+      .container {
+        display: flex;
+        flex-direction: column;
+        bottom: 8px;
+    }
+    
+    .container__main {
+        /* Take the remaining height */
+        flex-grow: 1;
+    
+        /* Layout the left sidebar, main content and right sidebar */
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .container__left {
+        width: 25%;
+    }
+    
+    .container__middle {
+        /* Take the remaining width */
+        flex-grow: 1;
+        border: 3px solid blue;
+    }
+    
+      .container__right {
+      position: absolute;
+      width: 37%;
+      right: 0;
+      border: 3px solid red;
+      }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         
         <div class="container-fluid">
           <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/modern-school-logo-design-template-1d88683e857f70116bf3ba828be9a84e_screen.jpg?ts=1576966343" alt=""  width="50" height="40" class="d-inline-block align-text-top">
-          <a class="navbar-brand" href="">PCRN</a>
+          <a class="navbar-brand" href="{% url 'home' %}">PCRN</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'register' %}">สมัครเรียน</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link active" href="#">คณะและหลักสูตร</a>
               </li>
-              <li class="nav-item dropdown">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">ทุนการศึกษา</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">ติดต่อเรา</a>
+              </li>
+              <!--<li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Dropdown
                 </a>
@@ -48,37 +87,38 @@
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Something else here</a></li>
                 </ul>
-              </li>
+              </li> 
               <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-              </li>
+              </li> -->
             </ul>
             <form class="d-flex">
               
-              <button class="btn btn-outline-success" type="submit">Sign up</button>&nbsp;
-              <button class="btn btn-outline-success" type="submit">Sign in</button>
+              <button class="btn btn-outline-success" type="submit">ลงทะเบียนเรียน(สำหรับนักศึกษาและอาจารย์)</button>&nbsp;
             </form>
           </div>
         </div>
       </nav>
-
-  <footer class="centet_footer">
+      <div class="my-3 p-3 bg-body rounded shadow-sm" style="margin-top:15px;">
+      <div class="col-sm-8 mx-auto" >
+      <div class="container" align="center">
+        {%block content%}
+          
+        {%endblock%}
+      </div>
+      </div>
+      </div>
+  <footer class="centet_footer" >
+    <hr>
   <div class="container1">
     <div class="jumbotron text-center" style="margin-bottom:0">
         <div class="col-12">
             <p class="mbr-text mb-0 mbr-fonts-style display-7">
-                © Copyright 2019 <a href="https://mobirise.com/bootstrap-template/" class="text-white">Free Bootstrap 4 Templates</a> - All Rights Reserved
+                ©Ratchanon Copyright 2019 <a  class="text-white">&nbsp&nbsp&nbsp</a> Email: koala4561@gmail.com
             </p>
         </div>
     </div>
   </div>
   </footer>
-  <center>
-  <div class="container">
-    {%block content%}
-      
-    {%endblock%}
-  </div>
-</center>
 </body>
 </html>

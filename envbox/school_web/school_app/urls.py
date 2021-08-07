@@ -5,4 +5,5 @@ from school_app.views import *
 
 urlpatterns = [
     path('',views.homepage,name='home'),
+    path('register/',views.register,name='register'),
 ]
