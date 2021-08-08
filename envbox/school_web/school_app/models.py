@@ -12,5 +12,5 @@ class register_students(models.Model):
     passcode = models.CharField(max_length=5)
 
     def __str__(self):
-        return '<Name : %s>' % self.name
-        #return self.name+' '+self.lastname+' '+self.email+' '+self.gender
+        #return '<Name : %s>' % self.name
+        return self.name+' '+self.lastname+' '+self.email+' '+self.gender
