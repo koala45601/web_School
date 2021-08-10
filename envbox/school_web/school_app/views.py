@@ -34,3 +34,6 @@ def register(request):
         return redirect('home')
 
     return render(request,"register.html")
+
+def login_backend(request):
+    return render(request,"back_login.html")
