@@ -26,7 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #localhost:8000 
     path('',include('school_app.urls')),
-    path('',auth_views.LoginView.as_view(template_name='Loginback.html'),name='login-page'),
+    path('logins/',auth_views.LoginView.as_view(template_name='Loginback.html'),name='login-page'),
     path('logout/',auth_views.LogoutView.as_view(template_name='Loginback.html'),name='logout-page')
 ]
 urlpatterns += staticfiles_urlpatterns()
