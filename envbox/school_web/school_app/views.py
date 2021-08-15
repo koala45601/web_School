@@ -1,6 +1,9 @@
 from django.shortcuts import *
 from django.http import HttpResponse,request
 from .models import *
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+from django.core.files.storage import FileSystemStorage
 
 # Create your views here.
 def homepage(request):
