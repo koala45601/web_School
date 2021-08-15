@@ -6,5 +6,5 @@ from school_app.views import *
 urlpatterns = [
     path('',views.homepage,name='home'),
     path('register/',views.register,name='register'),
-    #path('loginin/',views.login_backend,name='login_user'),
+    path('loginin/',views.login_backend,name='login_user'),
 ]
